@@ -92,16 +92,16 @@ var weatherImages = {
 "clear-day": "images/clear day.png" ,
 "clear-night": "images/clear night.png",
 "rain": "images/rain.png",
-"snow": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Nuvola_weather_snow.svg/1000px-Nuvola_weather_snow.svg.png",
-"sleet": "http://www.clker.com/cliparts/f/6/7/4/1206565674431593790Anonymous_simple_weather_symbols_10.svg.hi.png",
-"wind": "http://www.haotu.net/up/4233/128/216-wind.png",
-"fog": "http://www.iconninja.com/files/81/344/943/fog-cloud-hiding-the-sun-weather-interface-symbol-icon.svg",
+"snow": "images/snow.png",
+"sleet": "images/sleet.png",
+"wind": "images/windy.png",
+"fog": "images/fog.png",
 "cloudy": "/images/cloudy.png",
 "partly-cloudy-day": "images/partly cloudy day.png",
 "partly-cloudy-night": "images/partly cloudy night.png",
 "hail": "images/hail.png",
 "thunderstorm": "images/storm.png",
-"tornado": "http://hddfhm.com/images/clipart-of-a-tornado-11.png"
+"tornado": "images/tornado.png"
 }
 
 var getWeather = function() {
@@ -136,7 +136,7 @@ uvIndex.innerHTML = "uvIndex: " + object.currently.uvIndex;
 temperature.innerHTML = farenheitToCelsius(object.currently.temperature) + " C";
 windBearing.innerHTML = "Wind Direction: " + degreesToDirection(object.currently.windBearing);
 windSpeed.innerHTML = "Wind Speed: " + knotsToKilometres(object.currently.windSpeed) + " km/h";
-weatherSummary.innerHTML = "Current Location: " + object.timezone + " <br/> <br/> Weather Summary: " + object.currently.summary; 
+weatherSummary.innerHTML = "Current Location: " + object.timezone + " <br/> <br/>" + object.currently.summary; 
 document.getElementById("weather-summary"); 
 var description = data.currently.summary;
 console.log(object);
@@ -151,16 +151,8 @@ background-color: #E9F2FB;
 }
 
 .city {
-padding: 20px 0 10px 0;
+padding: 0px;
 }
-
-/*
-*,
-*:before,
-*:after {
-box-sizing: inherit;
-}
-*/
 
 .container {
 margin: 0 auto;
@@ -186,7 +178,8 @@ display: block;
 
 .city-title {
 font-size: 2.5em;
-padding-top: 15px;
+padding-top: 10px;
+height: 410px
 }
 
 #current-icon {
@@ -231,6 +224,7 @@ color: #FEF3F3;
 font-family: 'Rasa', sans-serif;
 letter-spacing: 0.2px;
 cursor: default;
+padding-left: 0px;
 }
 
 #getWeather {
@@ -280,7 +274,8 @@ font-family: 'Rasa', serif;
 font-weight: bold;
 color: #323D54;
 float: right;
-margin: 8px 5px 2px 10px;
+margin: 5px 5px;
+padding-top: 10px 
 }
 	
 #forio:hover {
